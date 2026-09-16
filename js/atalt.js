@@ -670,7 +670,7 @@ const LOADER=(()=>{
         prevent:n=>locked()||!!(n&&n.closest&&n.closest('.admin,.sheet,[data-quicket-modal]'))});
       window.__lenis=lenis;
       CLOCK.velGain=2.1;
-      CLOCK.add(now=>{ lenis.raf(now); return !!lenis.isScrolling; });
+      CLOCK.add(now=>{ lenis.raf(now); return !!lenis.isScrolling||busy; });   // busy: a screen turn outlives the clock's idle window
       addEventListener('wheel',()=>CLOCK.wake(true),{passive:true});
       document.addEventListener('click',e=>{ if(e.target.closest&&e.target.closest('a[href^="#"]')) CLOCK.wake(true); });
       new MutationObserver(()=>{ if(locked()) lenis.stop(); else lenis.start(); })
@@ -684,20 +684,27 @@ const LOADER=(()=>{
       const fits=()=>innerHeight>=600;
       const setPaged=()=>root.classList.toggle('paged',fits());
       setPaged(); addEventListener('resize',setPaged,{passive:true});
-      let busy=false, armed=true, lastT=0, settle=0;
+      let busy=false, armed=true, lastT=0, lastA=0, decay=0, settle=0;
       const nearest=()=>{ let best=0, dist=1e9; screens.forEach((s,i)=>{ const d=Math.abs(s.getBoundingClientRect().top); if(d<dist){ dist=d; best=i; } }); return best; };
       const go=i=>{ i=Math.max(0,Math.min(screens.length-1,i)); busy=true; CLOCK.wake(true);
+        /* The clock sleeps when nothing is happening, and Lenis keeps its own time. Coming out of a sleep,
+           the first frame would hand it the whole idle gap as one delta and the turn would jump instead of
+           run, so give it a fresh time base first. */
+        lenis.raf(performance.now());
         lenis.scrollTo(screens[i],{duration:.62,easing:t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,lock:true,force:true,
-          onComplete:()=>setTimeout(()=>{ busy=false; },140)});                          // a beat after landing, so a tail cannot ride on
+          onComplete:()=>setTimeout(()=>{ busy=false; CLOCK.wake(false); },140)});       // a beat after landing, so a tail cannot ride on
         setTimeout(()=>{ busy=false; },1100); };                                         // never stuck if a turn is interrupted
       addEventListener('wheel',e=>{
         if(!fits()||locked()||e.ctrlKey||Math.abs(e.deltaX)>Math.abs(e.deltaY)) return;
         e.preventDefault();
         const now=performance.now(), a=Math.abs(e.deltaY);
-        // a gesture is a burst; its momentum tail keeps arriving every frame or so. Only a real gap in the
-        // wheel stream starts a new one, so one flick turns one screen however long it coasts afterwards.
-        if(now-lastT>180) armed=true;
-        lastT=now;
+        /* What must not turn a second screen is a trackpad's momentum tail, and a tail is the one stream
+           that only ever gets weaker. So count consecutive weakening events: three in a row and the rest of
+           that coast is ignored. A mouse wheel (steady notches) and a slow two-finger drag (uneven) never
+           weaken three times running, so they keep paging; a gap in the stream always starts fresh. */
+        if(now-lastT>180){ armed=true; decay=0; }
+        else { decay=a<lastA-.5?decay+1:0; if(decay<3&&a>=8) armed=true; }
+        lastT=now; lastA=a;
         if(!armed||busy||a<3) return;
         armed=false; go(nearest()+(e.deltaY>0?1:-1));
       },{passive:false});
