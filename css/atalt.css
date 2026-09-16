@@ -356,6 +356,51 @@ html.noanim.gl .hero-marks .sigil-stack,html.noanim.gl .hero-marks .wm-big{opaci
   100%{opacity:1;clip-path:inset(0 0 0 0);transform:translateX(-50%)}
 }
 html.loading .fab,html:has(.sheet.open) .fab,html:has(body > [data-quicket-modal]) .fab{opacity:0;visibility:hidden;pointer-events:none}
+/* ---- the screen index ----
+   Six ticks on the trailing edge: how many screens there are, which one you are on, and a way to jump.
+   Hairlines, like the registration marks: it reads as part of the page's own furniture, not as a widget. */
+.rail{position:fixed;right:max(12px, env(safe-area-inset-right, 0px));top:50%;transform:translateY(-50%);z-index:47;
+  display:flex;flex-direction:column;align-items:flex-end;gap:clamp(10px,1.6vh,16px);padding:8px 4px}
+.rail button{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:4px 2px;min-height:22px;cursor:pointer}
+/* the numbers are the page's own mono labels, muted like every other label until you are on that screen */
+.rail .rail-n{font-size:.58rem;letter-spacing:.16em;color:var(--g1);transition:color .2s var(--cut)}
+.rail .tick{display:block;width:12px;border-top:.5px solid var(--hair);
+  transition:width var(--t-snap) var(--sp-snap),border-color .2s var(--cut)}
+.rail button[aria-current="true"] .rail-n{color:var(--off)}
+.rail button[aria-current="true"] .tick{width:28px;border-top-color:var(--off)}
+/* the name is there when you go looking for it, the way the row genres are */
+.rail .rail-l{font-size:.58rem;letter-spacing:.16em;color:var(--g1);max-width:0;overflow:hidden;opacity:0;white-space:nowrap;
+  transition:max-width var(--t-snap) var(--sp-snap),opacity .2s var(--cut)}
+@media (hover:hover) and (pointer:fine){
+  .rail button:hover .rail-l,.rail button:focus-visible .rail-l{max-width:14ch;opacity:1}
+  .rail button:hover .rail-n,.rail button:focus-visible .rail-n{color:var(--off)}
+  .rail button:hover .tick{border-top-color:var(--off)}
+}
+/* phones: the column runs to the edge, so the index keeps to the margin as ticks alone, and the screens
+   give it that margin rather than running underneath it */
+@media (max-width:760px){
+  main > section{padding-right:calc(var(--pad) + 14px)}
+  .rail{right:5px;gap:10px;padding:6px 0}
+  .rail .rail-l,.rail .rail-n{display:none}
+  .rail button{padding:4px 0;min-width:18px}
+  .rail .tick{width:8px}
+  .rail button[aria-current="true"] .tick{width:16px}
+}
+@media (max-height:520px){.rail{display:none}}
+html.loading .rail,html:has(.sheet.open) .rail,html:has(body > [data-quicket-modal]) .rail{opacity:0;visibility:hidden;pointer-events:none}
+
+/* ---- the first screen's cue ----
+   It says there is more below, and it is gone as soon as you move. */
+.cue{position:fixed;left:max(20px, env(safe-area-inset-left, 0px));bottom:max(22px, env(safe-area-inset-bottom, 0px));z-index:47;
+  display:flex;align-items:center;gap:10px;opacity:0;pointer-events:none;transition:opacity .4s var(--cut)}
+body.on-hero .cue{opacity:1}
+html.loading .cue{opacity:0}
+.cue-l{font-size:.58rem;letter-spacing:.18em;color:var(--g1)}
+.cue-line{display:block;width:0;height:26px;border-left:.5px solid var(--hair);transform-origin:50% 0}
+@media (prefers-reduced-motion:no-preference){.cue-line{animation:cue-fall 1.9s steps(1,end) infinite}}
+@keyframes cue-fall{0%{transform:scaleY(.25);opacity:.5}20%{transform:scaleY(.6);opacity:.9}40%{transform:scaleY(1);opacity:1}60%{transform:scaleY(1);opacity:.35}80%{transform:scaleY(.25);opacity:.5}100%{transform:scaleY(.25);opacity:.5}}
+@media (max-width:760px){.cue{bottom:max(18px, env(safe-area-inset-bottom, 0px))}.cue-line{height:20px}}
+
 /* Contact: the second action, so it is an outline of the same shape rather than another plate */
 .cta-ghost{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;
   background:none;color:var(--off);border:1px solid var(--hair);

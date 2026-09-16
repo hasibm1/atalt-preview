@@ -508,6 +508,36 @@ tick(); setInterval(tick,1000);
   });
 })();
 
+/* ---- the screen index ----
+   Six ticks: how many screens there are, which one you are on, and a way to jump to one. Built from the
+   sections themselves, kept in step by one IntersectionObserver — no scroll work. */
+(function rail(){
+  const rail=document.getElementById('rail'); if(!rail) return;
+  const screens=[...document.querySelectorAll('main > section')]; if(screens.length<2) return;
+  const NAMES={hero:'atalt',sound:'the sound',artists:'lineup',rules:'house rules',access:'tickets',end:'the gate'};
+  const btns=screens.map((s,i)=>{
+    const name=NAMES[s.id]||s.id||('screen '+(i+1));
+    const b=document.createElement('button');
+    b.type='button'; b.setAttribute('aria-label','Go to '+name);
+    b.innerHTML='<span class="rail-l mono"></span><span class="rail-n mono"></span><span class="tick" aria-hidden="true"></span>';
+    b.querySelector('.rail-l').textContent=name;
+    b.querySelector('.rail-n').textContent=String(i+1).padStart(2,'0');
+    b.addEventListener('click',()=>{ if(window.__lenis) window.__lenis.scrollTo(s,{duration:.62,lock:true,force:true});
+      else s.scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'}); });
+    rail.append(b); return b;
+  });
+  let current=-1;
+  const set=i=>{ if(i===current) return; if(current>=0) btns[current].removeAttribute('aria-current');
+    current=i; btns[i].setAttribute('aria-current','true'); };
+  const io=new IntersectionObserver(es=>{
+    let best=null;
+    for(const e of es) if(e.isIntersecting&&(!best||e.intersectionRatio>best.intersectionRatio)) best=e;
+    if(best) set(screens.indexOf(best.target));
+  },{threshold:[.5,.75]});
+  screens.forEach(s=>io.observe(s));
+  set(0);
+})();
+
 /* ---- contact: the closing screen's button opens Quicket's chat (its own floating icon is hidden) ---- */
 (function contact(){
   const btn=document.getElementById('contact-btn'); if(!btn) return;
