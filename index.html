@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ATALT · all things altered · ATA — 001</title>
+<meta name="description" content="All Things Altered, chapter 01. Acid, garage and techno on the outskirts of Dhaka, Friday 25 September 2026, 15:00 to 00:50. Entry by approved request only.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:title" content="ATALT · ATA — 001">
+<meta property="og:description" content="Not everything altered is broken. Chapter 01. Dhaka. Advance registration only.">
+<link rel="canonical" href="https://atalt.space/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atalt.space/">
+<meta property="og:site_name" content="ATALT">
+<meta property="og:image" content="https://atalt.space/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ATALT sigil and wordmark on black">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 50 A30 30 0 0 1 80 50' fill='none' stroke='%23F5F3ED' stroke-width='4'/%3E%3Cpath d='M28 50 A30 30 0 0 0 88 50' fill='none' stroke='%23F5F3ED' stroke-width='4'/%3E%3Cline x1='8' y1='50' x2='98' y2='50' stroke='%23F5F3ED' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:ROND,wght@0..100,400..900&family=Inter:wght@400..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- every "hidden until revealed" state is scoped to html.js, so without JS the page shows complete.
+     Failsafe: if the motion system has not started within 4 s (a CDN down, a script error), drop every
+     first-frame state so the page is simply there. -->
+<script>document.documentElement.classList.add('js','loading');setTimeout(function(){var d=document.documentElement;if(!d.classList.contains('ready'))d.classList.add('noanim')},4000)</script>
+<link rel="stylesheet" href="css/atalt.css?v=20260916a">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+
+<!-- Request access: one button, fixed at the foot of every screen -->
+<div class="fab" id="fab" data-quicket-widget-launcher><a class="cta-go" id="buy-tickets-btn" data-quicket-open href="https://quicket.me/events/atalt-001" target="_blank" rel="noopener"><span class="qk-label">Request access</span></a></div>
+
+<!-- loading screen: the line, torn, highlighted as the page loads, and the count (LOADER in atalt.js) -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="ld-wrap">
+    <p class="ld-text"><span class="t">Not everything altered is broken.</span><span class="b">Not everything altered is broken.</span><span class="h"><span>Not everything altered is broken.</span></span></p>
+    <div class="ld-pct"><span class="n">0</span>%</div>
+  </div>
+</div>
+
+<!-- SVG symbols: clean wordmark, altered wordmark, primary sigil (formulas from design system §04–05) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="wm-rects-top">
+      <rect x="10" y="0" width="20" height="10"/><rect x="0" y="10" width="10" height="10"/><rect x="30" y="10" width="10" height="10"/><rect x="0" y="20" width="40" height="10"/>
+      <rect x="50" y="0" width="40" height="10"/><rect x="60" y="10" width="20" height="20"/>
+      <rect x="110" y="0" width="20" height="10"/><rect x="100" y="10" width="10" height="10"/><rect x="130" y="10" width="10" height="10"/><rect x="100" y="20" width="40" height="10"/>
+      <rect x="150" y="0" width="20" height="30"/>
+      <rect x="200" y="0" width="40" height="10"/><rect x="210" y="10" width="20" height="20"/>
+    </g>
+    <g id="wm-rects-low">
+      <rect x="0" y="30" width="10" height="20"/><rect x="30" y="30" width="10" height="20"/>
+      <rect x="60" y="30" width="20" height="20"/>
+      <rect x="100" y="30" width="10" height="20"/><rect x="130" y="30" width="10" height="20"/>
+      <rect x="150" y="30" width="20" height="10"/><rect x="150" y="40" width="40" height="10"/>
+      <rect x="210" y="30" width="20" height="20"/>
+    </g>
+    <symbol id="wm-clean" viewBox="0 0 242 52"><g fill="currentColor"><use href="#wm-rects-top"/><use href="#wm-rects-low"/></g></symbol>
+    <symbol id="wm-alt" viewBox="-10 -2 262 56"><g fill="currentColor"><use href="#wm-rects-top"/><g class="low" transform="translate(2 0)"><use href="#wm-rects-low"/></g></g><line x1="-8" y1="30" x2="250" y2="30" stroke="currentColor" stroke-width="2.5"/></symbol>
+    <symbol id="sigil" viewBox="0 0 120 100">
+      <path d="M20 50 A30 30 0 0 1 80 50" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M24 50 A30 30 0 0 0 84 50" fill="none" stroke="currentColor" stroke-width="2.4"/>
+      <line x1="8" y1="50" x2="112" y2="50" stroke="currentColor" stroke-width="4.2"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<main id="top">
+
+<!-- 01 HERO -->
+<section class="hero" id="hero">
+  <span class="hero-line" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="mono muted"><span>all things altered</span><span>chapter one</span></div>
+      <div class="mono lg date" data-fact="dateShort">FR · 25.09.26</div>
+    </div>
+    <div class="hero-marks">
+      <div class="sigil-stack sigil-big"><img class="sg" src="assets/atalt-sigil.webp" width="1400" height="1070" alt="All Things Altered sigil" fetchpriority="high"><div class="sg-lo-w"><img class="sg sg-lo" src="assets/atalt-sigil.webp" width="1400" height="1070" alt="" aria-hidden="true"></div></div>
+      <svg class="wm-big" viewBox="-10 -2 262 56" role="img" aria-label="ATALT"><g fill="currentColor"><g class="hi"><rect x="10" y="0" width="20" height="10"/><rect x="0" y="10" width="10" height="10"/><rect x="30" y="10" width="10" height="10"/><rect x="0" y="20" width="40" height="10"/><rect x="50" y="0" width="40" height="10"/><rect x="60" y="10" width="20" height="20"/><rect x="110" y="0" width="20" height="10"/><rect x="100" y="10" width="10" height="10"/><rect x="130" y="10" width="10" height="10"/><rect x="100" y="20" width="40" height="10"/><rect x="150" y="0" width="20" height="30"/><rect x="200" y="0" width="40" height="10"/><rect x="210" y="10" width="20" height="20"/></g><g class="low-w"><g class="low"><rect x="0" y="30" width="10" height="20"/><rect x="30" y="30" width="10" height="20"/><rect x="60" y="30" width="20" height="20"/><rect x="100" y="30" width="10" height="20"/><rect x="130" y="30" width="10" height="20"/><rect x="150" y="30" width="20" height="10"/><rect x="150" y="40" width="40" height="10"/><rect x="210" y="30" width="20" height="20"/></g></g></g><line x1="-8" y1="30" x2="250" y2="30" stroke="currentColor" stroke-width="2.5"/></svg>
+    </div>
+    <div class="hero-foot mono"><span class="f">outskirts of dhaka</span> <span class="muted">•</span> <span class="f">15:00 to 00:50</span></div>
+  </div>
+</section>
+
+<!-- 02 SOUND -->
+<section class="sound" id="sound">
+  <div class="wrap" data-fit>
+    <div class="eyebrow mono muted"><span>the sound</span></div>
+    <h2 class="split" data-split><span class="t">Dark acid garage. Broken structures. Hypnotic rhythm.</span><span class="b" aria-hidden="true">Dark acid garage. Broken structures. Hypnotic rhythm.</span></h2>
+    <p class="body">One room, 808s and 303s, from daylight to close. It starts slow and wide and tightens after dark.</p>
+  </div>
+</section>
+
+<!-- 05 ARTISTS — names, click to open -->
+<section class="artists" id="artists">
+  <div class="wrap" data-fit="own">
+    <div class="eyebrow mono muted"><span>lineup</span></div>
+    <div class="acc">
+      <div class="item" id="ar-aayna">
+        <button class="name" aria-expanded="false" aria-controls="b-aayna">
+          <span class="n">AAYNA</span>
+          <span class="mono muted m">acid · house · electro · breaks · uk garage · idm · left-field</span>
+          <span class="sign" aria-hidden="true"></span>
+        </button>
+        <div class="body" id="b-aayna">
+          <div class="inner">
+            <figure><img src="assets/aayna.webp" width="906" height="1100" alt="AAYNA, portrait" loading="lazy"><figcaption class="genre mono">acid · house · electro · breaks · uk garage · idm · left-field</figcaption></figure>
+            <div>
+              <div class="bio"><p>Aayna is an Indian DJ and producer whose work orbits the Roland TB-303. She reworks the acid house architecture of the 1980s and 1990s through house, electro, breaks, UK garage, IDM and left-field forms. She has played the main stages of Magnetic Fields and DGTL India, plus Echoes of Earth in Bangalore, Ziro Festival and Grasslands in Nepal. Keep Hush has carried her mixes; her Boiler Room set is on YouTube.</p></div>
+              <div class="links mono">
+                <a href="https://www.instagram.com/aayna.music" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://soundcloud.com/user-519313833" target="_blank" rel="noopener">SoundCloud</a>
+              </div>
+              <div class="embed">
+                <div class="ratio"><iframe title="AAYNA on YouTube" src="https://www.youtube-nocookie.com/embed/wW6c6HCwk3A" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" id="ar-omdg">
+        <button class="name" aria-expanded="false" aria-controls="b-omdg">
+          <span class="n">OMDG</span>
+          <span class="mono muted m">progressive house · electronica · breaks · uk garage · hypnotic</span>
+          <span class="sign" aria-hidden="true"></span>
+        </button>
+        <div class="body" id="b-omdg">
+          <div class="inner">
+            <figure><img src="assets/omdg.webp" width="677" height="1100" alt="OMDG, portrait" loading="lazy"><figcaption class="genre mono">progressive house · electronica · breaks · uk garage · hypnotic</figcaption></figure>
+            <div>
+              <div class="bio"><p>OMDG is a Dhaka DJ, producer and promoter who has spent a decade building the infrastructure his own scene needed. Active since 2014, he co-founded Breakfast Club Dhaka, Farmhaus, Rumours and Socials, and BOFA, one of the first YouTube channels to document Bangladeshi electronic artists. He was featured in the inaugural MIXMAG Dhaka episode. He has played across India, Sri Lanka and Kenya, and released as OMDG × Mana on AH Digital.</p></div>
+              <div class="links mono">
+                <a href="https://www.instagram.com/omdg_bd" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://soundcloud.com/tonmoy-dg" target="_blank" rel="noopener">SoundCloud</a>
+                <a href="https://open.spotify.com/artist/49UJTmzQmp9PcmJO9jdWHx" target="_blank" rel="noopener">Spotify</a>
+              </div>
+              <div class="embed">
+                <iframe title="OMDG on SoundCloud" height="166" scrolling="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Ftonmoy-dg%2Fmixmag-dhaka&color=%23f5f3ed&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" id="ar-shady">
+        <button class="name" aria-expanded="false" aria-controls="b-shady">
+          <span class="n">shadYman</span>
+          <span class="mono muted m">dark techno · hard techno</span>
+          <span class="sign" aria-hidden="true"></span>
+        </button>
+        <div class="body" id="b-shady">
+          <div class="inner">
+            <figure><img src="assets/shadyman.webp" width="701" height="1100" alt="shadYman, portrait" loading="lazy"><figcaption class="genre mono">dark techno · hard techno</figcaption></figure>
+            <div>
+              <div class="bio"><p>shadYman came up through Cat House Melbourne, the techno collective that shaped his sound: dark, hard, functional. Since 2018 he has shared stages with Amotik, Setaoc Mass, Cleric, Lewis Fautzi, Takaaki Itoh and Phase. He then franchised Cat House to Dhaka with a small group of friends, importing the format rather than just the records.</p></div>
+              <div class="links mono">
+                <a href="https://www.instagram.com/__shadyman__" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://soundcloud.com/therealshadyman" target="_blank" rel="noopener">SoundCloud</a>
+              </div>
+              <div class="embed">
+                <iframe title="shadYman on SoundCloud" height="166" scrolling="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Ftherealshadyman%2Fhammerhead-5-0&color=%23f5f3ed&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" id="ar-aash">
+        <button class="name" aria-expanded="false" aria-controls="b-aash">
+          <span class="n">AASHNAi</span>
+          <span class="mono muted m">leftfield techno · bass · experimental club · neo-trance · noise</span>
+          <span class="sign" aria-hidden="true"></span>
+        </button>
+        <div class="body" id="b-aash">
+          <div class="inner">
+            <figure><img src="assets/aashnai.webp" width="788" height="1100" alt="AASHNAi, portrait" loading="lazy"><figcaption class="genre mono">leftfield techno · bass · experimental club · neo-trance · noise</figcaption></figure>
+            <div>
+              <div class="bio"><p>AASHNAi, also known as NAI, was among the first femme DJs in the Dhaka underground. DJ, producer and multimedia artist working across leftfield techno, bass, experimental club, neo-trance and noise. She has appeared on Keep Hush Bangladesh and Nepal with Bhai Bhai Soundsystem, shared lineups with Jai Wolf, KISSNUKA and Joi Soundsystem, and played Outerspace Kochi, the Shinsaibashi circuit and Westharlem Kyoto alongside Manchineel, Kazushi and Lomax. Her EP AJNA landed in 2025.</p></div>
+              <div class="links mono">
+                <a href="https://www.instagram.com/aashnai__" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://soundcloud.com/aashnai-syeda-962334482" target="_blank" rel="noopener">SoundCloud</a>
+              </div>
+              <div class="embed">
+                <iframe title="AASHNAi on SoundCloud" height="166" scrolling="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Faashnai-syeda-962334482%2Fthe-hatch-decamp&color=%23f5f3ed&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" id="ar-tbt">
+        <button class="name" aria-expanded="false" aria-controls="b-tbt">
+          <span class="n">The Brown Testament</span>
+          <span class="mono muted m">progressive house · minimal tech · deep tech · acid jazz</span>
+          <span class="sign" aria-hidden="true"></span>
+        </button>
+        <div class="body" id="b-tbt">
+          <div class="inner">
+            <figure><img src="assets/brown-testament.webp" width="733" height="1100" alt="The Brown Testament, portrait" loading="lazy"><figcaption class="genre mono">progressive house · minimal tech · deep tech · acid jazz</figcaption></figure>
+            <div>
+              <div class="bio"><p>The Brown Testament is Seeham, a Bangladesh-American DJ and founder splitting time between Dhaka and Washington DC. He founded Elysium Affair, SYM Society, Soundesh and Altitude, and runs Nobo Festival and the Matcha Society series. He has played Brooklyn Monarch, Vagalume Tulum, Do Not Sit On the Furniture, Members LA and SXSW, and opened for Guy J, Yokoo, Dosem, Yulia Niko, Mahmut Orhan and Jeremy Olander.</p></div>
+              <div class="links mono">
+                <a href="https://www.instagram.com/thebrowntestament" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://soundcloud.com/thebrowntestament" target="_blank" rel="noopener">SoundCloud</a>
+              </div>
+              <div class="embed">
+                <iframe title="The Brown Testament on SoundCloud" height="166" scrolling="no" allow="autoplay" loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fthebrowntestament%2Frewire-006-with-guests-omdg&color=%23f5f3ed&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item" id="ar-tik">
+        <button class="name" aria-expanded="false" aria-controls="b-tik">
+          <span class="n">tikt!k!</span>
+          <span class="mono muted m">acid house · techno · hypnotic</span>
+          <span class="sign" aria-hidden="true"></span>
+        </button>
+        <div class="body" id="b-tik">
+          <div class="inner">
+            <figure><img src="assets/tiktiki.webp" width="1077" height="1100" alt="tikt!k!, portrait" loading="lazy"><figcaption class="genre mono">acid house · techno · hypnotic</figcaption></figure>
+            <div>
+              <div class="bio"></div>
+              <div class="links mono">
+                <a href="https://www.instagram.com/iiishnad" target="_blank" rel="noopener">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 HOUSE RULES -->
+<section class="rules" id="rules">
+  <div class="wrap" data-fit>
+    <div class="eyebrow mono muted"><span>house rules</span></div>
+    <div class="rule-grid">
+      <div class="rule">
+        <h2 class="split" data-split><span class="t">No filming.</span><span class="b" aria-hidden="true">No filming.</span></h2>
+        <div class="why"><p>We cover your camera lens at the gate. Your phone still works for calls and messages. Our photographers shoot until close and share the photos afterwards on a private link.</p></div>
+      </div>
+      <div class="rule">
+        <h2 class="split" data-split><span class="t">No alcohol.<br>No&nbsp;substances.</span><span class="b" aria-hidden="true">No alcohol.<br>No&nbsp;substances.</span></h2>
+        <div class="why"><p>Bags are checked at the gate. Anyone carrying or using is turned away or removed, with no refund and no re-entry.</p></div>
+      </div>
+      <div class="rule" id="dress">
+        <h2 class="split" data-split><span class="t">All black.</span><span class="b" aria-hidden="true">All black.</span></h2>
+        <div class="why"><p>Head to toe. Wear what you can move in, shoes you can stand in until close, and nothing that reflects light.</p></div>
+      </div>
+      <div class="rule rule-end">
+        <h2 class="split" data-split><span class="t">We hold the right to say no.</span><span class="b" aria-hidden="true">We hold the right to say no.</span></h2>
+        <div class="why"><p>Break any rule and you will be denied entry.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 ACCESS / tickets -->
+<section class="access" id="access">
+  <div class="wrap" data-fit>
+    <div class="eyebrow mono muted"><span>tickets</span></div>
+    <h2 class="split" data-split><span class="t">Request access.</span><span class="b" aria-hidden="true">Request access.</span></h2>
+    <p class="lead">Entry is by request only. We read every request by hand, and capacity is limited.</p>
+
+    <div class="steps">
+      <div><span class="mono">01</span><span>Request access with your name, email and phone.</span></div>
+      <div><span class="mono">02</span><span>If you’re approved, you get an email with a link to buy your ticket.</span></div>
+      <div><span class="mono">03</span><span>Ticket holders get the location before the night.</span></div>
+      <div><span class="mono">04</span><span>Bring valid ID.</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 06 THE GATE: the countdown and the partners -->
+<section class="outro" id="end">
+  <div class="wrap" data-fit>
+    <div class="count" id="count" aria-live="polite">
+      <div class="mono muted">gate opens in</div>
+      <div class="line">
+        <span class="seg"><span class="num" data-u="d">00</span><span class="unit">days</span></span>
+        <span class="seg"><span class="num" data-u="h">00</span><span class="unit">hrs</span></span>
+        <span class="seg"><span class="num" data-u="m">00</span><span class="unit">min</span></span>
+        <span class="seg"><span class="num" data-u="s">00</span><span class="unit">sec</span></span>
+      </div>
+    </div>
+    <div class="partners" role="group" aria-label="Partners">
+    <div class="row">
+      <img class="p-ltm" src="assets/live-the-moment.webp" width="1000" height="723" alt="Live the Moment">
+      <img class="p-sigil" src="assets/atalt-sigil.webp" width="1400" height="1070" alt="All Things Altered">
+      <img class="p-f1" src="assets/funktion-one.webp" width="1200" height="764" alt="Funktion-One">
+    </div>
+    </div>
+    <div class="outro-contact"><button type="button" class="cta-ghost" id="contact-btn">Contact us</button></div>
+  </div>
+</section>
+</main>
+
+<!-- artist sheet: a name in the lineup opens its artist here (atalt.js moves the six bodies in) -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-name" aria-hidden="true">
+  <div class="sheet-bar">
+    <div class="sheet-nav mono">
+      <button type="button" class="sheet-prev" aria-label="Previous artist">Prev</button>
+      <span class="sheet-count muted">01 / 06</span>
+      <button type="button" class="sheet-next" aria-label="Next artist">Next</button>
+    </div>
+    <button type="button" class="sheet-close mono">Close</button>
+  </div>
+  <div class="sheet-head">
+    <h2 class="sheet-name" id="sheet-name">Lineup</h2>
+    <div class="sheet-genre mono muted"></div>
+  </div>
+  <div class="sheet-bodies"></div>
+</div>
+
+<div class="admin" id="admin" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="admTitle">
+  <div class="admin-inner">
+    <button class="admin-close mono" id="admClose" aria-label="Close">Close</button>
+
+    <div class="adm-step" id="admGate">
+      <div class="mono muted">restricted</div>
+      <h2 class="adm-h" id="admTitle">Administration</h2>
+      <p class="adm-sub">Internal documents. Encrypted at rest. Not indexed, not linked publicly.</p>
+      <div class="adm-field">
+        <input type="password" id="admPw" class="mono" placeholder="PASSWORD" autocomplete="current-password" spellcheck="false">
+        <button class="btn adm-go" id="admGo"><span>Unlock</span></button>
+      </div>
+      <div class="adm-msg mono" id="admMsg" role="status"></div>
+    </div>
+
+    <div class="adm-step" id="admDash" hidden>
+      <nav class="adm-crumb mono" aria-label="Breadcrumb">
+        <ol>
+          <li>Administration</li>
+          <li aria-current="page">Internal documents</li>
+        </ol>
+      </nav>
+      <h2 class="adm-h">Internal documents</h2>
+      <div class="adm-docs">
+        <button class="adm-doc" data-doc="brand">
+          <span class="adm-doc-n">Brand guideline</span>
+          <span class="mono muted">visual design system · v1.0</span>
+        </button>
+        <button class="adm-doc" data-doc="brief">
+          <span class="adm-doc-n">Content brief</span>
+          <span class="mono muted">ATA — 001 · photo and release plan</span>
+        </button>
+      </div>
+      <div class="adm-msg mono" id="admMsg2" role="status"></div>
+    </div>
+
+    <div class="adm-step adm-view" id="admView" hidden>
+      <nav class="adm-crumb mono" aria-label="Breadcrumb">
+        <ol>
+          <li>Administration</li>
+          <li><button type="button" class="adm-crumb-l" id="admBack">Internal documents</button></li>
+          <li aria-current="page" id="admCrumbDoc">Document</li>
+        </ol>
+      </nav>
+      <iframe class="adm-frame" id="admFrame" title="Internal document" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- data-quicket-widget-launcher: not a Quicket auto-render slot (this button
+     keeps its own design, wired manually below) -- purely a marker so the
+     chat widget's own collision-avoidance can detect this bar and lift its
+     launcher above it instead of overlapping it on mobile, where this bar
+     runs full-width along the same bottom edge. -->
+
+
+
+<!-- motion: GSAP (defer keeps order: it runs before atalt.js). Lenis is loaded by atalt.js on fine pointers only. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha384-HOvlOYPIs/zjoIkWUGXkVmXsjr8GuZLV+Q+rcPwmJOVZVpvTSXQChiN4t9Euv9Vc" crossorigin="anonymous" defer></script>
+<script src="js/atalt.js?v=20260916a" defer></script>
+
+<!-- Quicket Ticket Widget -->
+<script src="https://quicket.me/widget.js"></script>
+<script>
+  // Keep the site's own button design; open the widget modal on click instead
+  // of the default auto-rendered button. Falls back to the real link
+  // (target="_blank" to quicket.me) if widget.js fails to load for any reason.
+  (function () {
+    var btns = document.querySelectorAll('[data-quicket-open]');
+    if (!btns.length || !window.QuicketWidget) return;
+    Array.prototype.forEach.call(btns, function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.QuicketWidget.open('atalt-001', { color: '#F23F39' });
+      });
+    });
+
+    // Visitor arrived via the emailed ?qkt-access-token=... link (or already
+    // held a grant from earlier this session) and is approved to buy -- no
+    // point asking them to "Request access" again.
+    window.addEventListener('quicket:whitelist-verified', function (e) {
+      if (e.detail && e.detail.slug && e.detail.slug !== 'atalt-001') return;
+      Array.prototype.forEach.call(document.querySelectorAll('.qk-label'), function (label) {
+        label.textContent = 'Buy tickets';
+      });
+    });
+  })();
+</script>
+
+<!-- Quicket Chat Widget -->
+<script src="https://quicket.me/chat-widget.js"
+        data-quiket-org="atalt"
+        data-quiket-key="qkt_pub_lqc-djtlTvhFUJz1He9SFRsd"
+        data-quiket-color="#1A1A1A"
+        data-quiket-theme="light"
+        data-quiket-position="bottom-left"></script>
+</body>
+</html>
