@@ -325,11 +325,14 @@ html.noanim.gl .hero-marks .sigil-stack,html.noanim.gl .hero-marks .wm-big{opaci
 .partners .p-ltm{max-width:min(24%,210px)}
 .partners .p-sigil{max-width:min(16%,150px)}
 .partners .p-f1{max-width:min(24%,200px)}
-/* phone: the three marks stay in one row */
+/* phone: the three marks stack, in the same order */
 @media (max-width:760px){
-  .partners .row{gap:14px}
-  .partners .p-ltm,.partners .p-f1{max-width:27%}
-  .partners .p-sigil{max-width:16%}
+  .partners .row{flex-direction:column;justify-content:center;gap:clamp(12px,2.6vh,28px)}
+  .partners .p-ltm{max-width:46%}
+  .partners .p-sigil{max-width:26%}
+  .partners .p-f1{max-width:42%}
+  html.fit .outro .partners img{max-height:min(100%,11vh)}
+  html.fitting .outro .partners img{max-height:52px}
 }
 
 /* Request access — the one thing you can press. It sits on the hero, under the time and place, and again
@@ -379,7 +382,7 @@ html.loading .fab,html:has(.sheet.open) .fab,html:has(body > [data-quicket-modal
 /* phones: the column runs to the edge, so the index keeps to the margin as ticks alone, and the screens
    give it that margin rather than running underneath it */
 @media (max-width:760px){
-  main > section{padding-right:calc(var(--pad) + 14px)}
+  main > section{padding-inline:calc(var(--pad) + 8px)}    /* symmetric, so the column stays on the button's axis */
   .rail{right:5px;gap:10px;padding:6px 0}
   .rail .rail-l,.rail .rail-n{display:none}
   .rail button{padding:4px 0;min-width:18px}
